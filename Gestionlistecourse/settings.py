@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',  # Ajoutez cette ligne
 ]
 
 ROOT_URLCONF = 'Gestionlistecourse.urls'
@@ -121,5 +122,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Répertoire où les fichi
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Répertoires supplémentaires pour les fichiers statiques
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
